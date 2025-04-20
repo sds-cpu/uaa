@@ -115,7 +115,7 @@ app/
 ## 👤 Author
 
 **Sakshi Shinde**  
-GitHub: [github.com/your-username](https://github.com/your-username)
+GitHub: [github.com/sds-cpu](https://github.com/sds-cpu)
 
 ## 🕓 Deadline
 
