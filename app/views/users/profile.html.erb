@@ -1,0 +1,20 @@
+<h1>Your Profile</h1>
+
+<p><strong>Full Name:</strong> <%= @user.full_name %></p>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Role:</strong> <%= @user.role %></p>
+<% if @user.profile_photo.attached? %>
+  <p><strong>Profile Photo:</strong><br>
+    <%= image_tag @user.profile_photo.variant(resize_to_limit: [150, 150]) %>
+  </p>
+<% end %>
+
+<hr>
+<% if current_user.admin? %>
+  <p>
+    <%= link_to 'Go to Admin Dashboard', admin_dashboard_index_path, class: 'btn btn-primary' %>
+  </p>
+<% end %>  
+<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %><br><br>
+<%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-link" %>
+

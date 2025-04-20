@@ -1,0 +1,16 @@
+<h1 class="text-2xl font-bold mb-4">Welcome, <%= current_user.full_name %>!</h1>
+
+<p class="text-lg text-gray-700">You're signed in as a <%= current_user.role.capitalize %>.</p>
+
+<% if current_user.profile_photo.attached? %>
+  <div class="mt-4">
+    <p>Your Profile Photo:</p>
+    <%= image_tag current_user.profile_photo, class: "rounded-full w-32 h-32 object-cover" %>
+  </div>
+<% else %>
+  <p class="mt-4 text-gray-500">You haven’t uploaded a profile photo yet.</p>
+<% end %>
+
+<div class="mt-6">
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+</div>

@@ -1,0 +1,14 @@
+<% if current_user.admin? %>
+  <h1>Admin Dashboard</h1>
+  <p>Welcome, Admin!</p>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.full_name %> - <%= user.email %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h1>User Dashboard</h1>
+  <p>Welcome, <%= current_user.full_name %>!</p>
+  <p>Your email: <%= current_user.email %></p>
+  <p>Your profile: <%= @profile.full_name %></p>
+<% end %>
