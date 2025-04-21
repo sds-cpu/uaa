@@ -23,12 +23,13 @@ end
     resources :dashboard, only: [:index]
     resources :users, only: [:index, :edit, :update, :destroy] do
       put 'promote',on: :member
+      put 'demote', on: :member 
     end  
     
     # Admin dashboard route
     get 'dashboard', to: 'dashboard#index'
   end
-
+  
   # Regular user dashboard route (non-admin users)
   get "dashboard", to: "dashboard#index"
 
